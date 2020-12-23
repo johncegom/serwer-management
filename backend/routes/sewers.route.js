@@ -1,10 +1,8 @@
 const express = require("express");
-const sewerModel = require("../models/sewer.model");
-
 const router = express.Router();
 
 // Import model
-const SewerModel = require('../models/sewer.model');
+const sewerModel = require('../models/sewer.model');
 
 
 router.get('/', async (req, res) => {

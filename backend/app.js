@@ -17,6 +17,8 @@ app.set('port', process.env.PORT || 9870);
 
 // Routes
 app.use('/sewers', sewersRoute);
+app.use('/users', usersRoute);
+
 
 // Databases connection
 mongoose.connect(
