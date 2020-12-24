@@ -15,6 +15,6 @@ router.post('/', sewerController.addSewer);
 router.delete('/:sewerId', sewerController.deleteSewer);
 
 // Update routes (Put/Patch)
-router.patch('/sewerId', sewerController.updateSewer);
+// router.patch('/sewerId', sewerController.updateSewer);
 
 module.exports = router;
