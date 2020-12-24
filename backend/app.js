@@ -13,7 +13,7 @@ app.use(express.urlencoded({
 }));
 
 // Setting
-app.set('port', process.env.PORT || 9870);
+app.set('port', process.env.PORT || 2048);
 
 // Routes
 app.use('/sewers', sewersRoute);
@@ -24,7 +24,7 @@ app.use('/users', usersRoute);
 mongoose.connect(
     process.env.DB_CONNECTION,
     { useUnifiedTopology: true, useNewUrlParser: true },
-    () => console.log("Connected to DB!")
+    () => console.log("Connected to MongoDB!")
 );
 
 // listen for requests :)
