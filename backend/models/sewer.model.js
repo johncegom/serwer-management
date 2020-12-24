@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const sewerSchema = mongoose.Schema({
+    _id: String,
     name: {
         type: String,
         required: true

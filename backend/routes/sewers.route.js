@@ -1,33 +1,20 @@
 const express = require("express");
-const sewerModel = require("../models/sewer.model");
-
 const router = express.Router();
 
-// Import model
-const SewerModel = require('../models/sewer.model');
+// Import controller
+const sewerController = require('../controllers/sewers.controller');
 
+// Get routes
+router.get('/', sewerController.getAll);
+router.get('/:sewerId', sewerController.getOne);
 
-router.get('/', async (req, res) => {
-    try {
-        const sewers = await sewerModel.find();
-        res.json(sewers);
-    } catch(err) {
-        res.json({message: err});
-    }
-});
+// Post routes
+router.post('/', sewerController.addSewer);
 
-router.post('/', async (req, res) => {
-    try {
-        const sewer = new SewerModel( {
-            name: req.body.name,
-            description: req.body.description
-        });
+// Delete routes
+router.delete('/:sewerId', sewerController.deleteSewer);
 
-        const savedSewer = await sewer.save();
-        res.json(savedSewer);
-    } catch(err) {
-        res.json({message: err});
-    }
-})
+// Update routes (Put/Patch)
+// router.patch('/sewerId', sewerController.updateSewer);
 
 module.exports = router;
